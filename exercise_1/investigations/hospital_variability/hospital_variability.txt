@@ -1,0 +1,61 @@
+Procedures with the largest variability between hospitals
+
+measure_id	measure_name	max_score	min_score	average_score
+stdev_score	stdev_rank	range	range_rank
+ED_1b   ED1     1368    60      278.3556715188135       103.6933353869799
+1       1308    1
+
+ED_2b   ED2     668     0       101.44146880176697      64.49377383226894
+2       668     3
+
+OP_18b  OP 18   752     46      142.2027800490597       43.06130122203031
+3       706     2
+
+measure_id	measure_name	max_score	min_score	average_score
+stdev_score	stdev_rank
+OP_29   Endoscopy/polyp surveillance: appropriate follow-up interval for
+normal colonoscopy in average risk patients  100      0
+80.55990694067468       23.917879727648927      1
+
+OP_30   Endoscopy/polyp surveillance: colonoscopy interval for patients with a
+history of adenomatous polyps - avoidanc
+e of inappropriate use  100     0       86.55659229208925
+18.96746568776597       2
+
+STK_4   Thrombolytic Therapy    100     0       90.38690476190476
+18.125409095204297      3
+OP_23   Head CT results 100     17      76.84046692607004
+16.28967022475066       4
+
+IMM_3_OP_27_FAC_ADHPCT  Healthcare workers given influenza vaccination  100
+11      84.49061662198392       14.8950
+61082335312     5
+
+IMM_2   Immunization for influenza      100     0       92.06584877315974
+12.914305408751106      6
+
+VTE_5   Warfarin therapy discharge instructions 100     16
+93.19368131868131       10.787398205629842      7
+
+I examined the variability of procedures between hospitals using the effective
+cares table. I used the same 17 metrics used to examine best hospitals, and
+split them by metrics - ones measured in time, and ones measured in
+percentage. I calculated the standard deviation for each set of measurement
+metrics, and range for only the time unit metrics since percentage range might
+be less meaningful given the max range at 100. I ordered the tables from the
+largest standard deviation to the smallest to come up with the top procedures
+with the greatest variability. 
+
+Since the ratio of number of metrics measured in percent vs time is about 2:1,
+I wanted to represent the results using that ratio as well. Thus, I picked 3
+procedures with the greatest variability in standard deviation and rage from
+the time metrics table and 7 procedures with the greatest variability in
+standard deviation from the percent metrics table. 
+
+The results did not come surprising, the top procedures with the greatest
+variability are not life-threatening procedures that would result in sudden
+death of the patient. Waiting time in the emergency room both to be seen and
+to be admitted would be expected to have big variability because doctors and
+hospital staff must prioritize patients in order of severity. 
+
+

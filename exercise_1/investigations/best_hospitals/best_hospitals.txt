@@ -1,0 +1,55 @@
+Top ten hospitals in the nation
+
+provider_id	hospital_name	state	overall_rating	rank_score
+460011  CASTLEVIEW HOSPITAL     UT      4       216
+420087  ROPER HOSPITAL  SC      5       223
+160112  SPENCER MUNICIPAL HOSPITAL      IA      4       231
+520038  AURORA MEDICAL CTR WASHINGTON COUNTY    WI      4       241
+430013  AVERA QUEEN OF PEACE    SD      4       248
+190167  MERCY REGIONAL MEDICAL CENTER   LA      4       249
+150065  SCHNECK MEDICAL CENTER  IN      5       251
+170123  WESLEY MEDICAL CENTER   KS      4       252
+190144  MINDEN MEDICAL CENTER   LA      4       255
+520057  ST CLARE HOSPITAL       WI      4       256
+
+In order to come up with the best hospitals given the datasets, I decided to
+take measuring metrics from the tables hospitals, effective care, and
+readmission. Since these all had different scales, I decided that it was best
+to rank the hospitals by different measurements using the scores provided, and
+then compare them that way. To do so, I first had to determine how are the
+scores measured, and which direction indicates the best score vs the worst
+score.
+
+I first did this in the effective cares table, and first looked at which
+measure is a measure of care in the hospital, and had enough hospitals
+responding to obtain a meaningful ranking. I ended up picking 17 measurements
+to examine. First, I categorized them into 3 categories based on types of
+measurement. Then I used DENSE_RANK function in Sparksql to rank hospitals by
+score for each of the 17 measurements, 1 being the best. I also made certain
+to only use valid scores, excluding "Not Available" and scores where
+the sample size was less than 25. 
+
+Once I came up with the ranking for all the 17 categories, I started to
+examine the readmissions table, which was a bit less straight forward in terms
+of scoring than the effective cares table. I ended up using the Compared to
+National column and scored hospitals that way, again only counting valid
+scores. Similarly, I came up with a ranking for all the hospitals across all
+different measures in the readmissions table. 
+
+I then joined these ranking tables together with the hospitals table,
+pulling a complete set of provider id, hospital name, state and overall
+rating. Since nulls were being treated like 0s, which benefits with the
+overall ranking score (adding across all rankings, lowest score being the
+best), I create a valid flag for both effective care metrics and readmission
+metrics to make sure the data for a hospital is complete enough to be
+considered in this comparison. I also put a filter on overall rating in the
+hospitals table to only consider the hospitals with overall rating to be 4 or
+5. 
+
+I think overall, this is a holistic approach to solve the problem, looking at
+rankings allows for a standardized way to compare metrics with different
+units. Pulling metrics from hospitals, readmission and effective care tables
+also looks at the hospital from multiple perspectives instead of using just
+one of those tables. 
+
+

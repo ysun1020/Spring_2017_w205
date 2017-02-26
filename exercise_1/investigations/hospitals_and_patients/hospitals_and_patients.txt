@@ -1,0 +1,67 @@
+Top 10 hospitals that recieved high ranking using the methodology in step 1, as well as recieved good survey responses from patients
+
+provider_id	hospital_name	overall_rating	rank_score
+overall_performance	overall_achievement	consistency_score
+420087  ROPER HOSPITAL  5       223     81.47   8       20.0
+150065  SCHNECK MEDICAL CENTER  5       251     83.17   9       20.0
+190144  MINDEN MEDICAL CENTER   4       255     81.46   8       20.0
+520057  ST CLARE HOSPITAL       4       256     80.34   7       20.0
+530015  ST JOHNS MEDICAL CENTER 4       282     82.66   8       20.0
+230003  SPECTRUM HEALTH ZEELAND COMMUNITY HOSPITAL      4       289     85.42   10      20.0
+140161  SAINT JAMES HOSPITAL    4       306     80.25   7       20.0
+160069  MERCY MEDICAL CENTER-DUBUQUE    4       307     81.67   8       20.0
+230236  METRO HEALTH HOSPITAL   4       314     81.33   7       20.0
+060103  CENTURA HEALTH-AVISTA ADVENTIST HOSPITAL        4       333     80.06   7       20.0
+
+
+To come up with a comparison between hospitals measures and survey responses,
+I first filtered on the survey responses table to only consider hospitals that
+have performed well in the survey. It was difficult to try to examine all the
+categories, so I picked the overall category and consistency score to use as
+metrics for this comparison, because I think these are good summary metrics
+that represent how the hospital performed in the survey. I filtered on
+hospitals with achievement points of greater than or equal to 7, consistency
+score of above 15, and hospitals with valid performance points. I then used an
+inner join to join the results from above to the best hospitals results from
+step one, and ordered by rank score, then pulled the top ten hospitals. 
+
+The top ten does suggest the best hospitals are correlated with patient survey
+responses. These 10 hospitals all have overall ratings of 4 or 5, and low
+ranking scores in the two to three hundred. The overall performance score in
+the survey responses are all above 80, and they all have consistency scores of
+20. The consistency score is very important here because it shows that these
+hospitals scored greater than or equal to the achievement threshold in all
+dimensions of the survey. 
+
+
+Procedure variability and survey results
+
+measure_id	survey_category		stdev_score	stdev_rank
+ED_1b   responsiveness  103.6933353869799       1
+ED_2b   responsiveness  64.49377383226894       2
+OP_29   comm_with_docs  23.917879727648927      1
+OP_30   comm_with_docs  18.96746568776597       2
+VTE_5   medicine        10.787398205629842      7
+
+stdev_nurses	stdev_doctors	stdev_responsiveness	stdev_pain
+stdev_medicine	stdev_cleanliness	stdev_discharge
+4.772560369310799       4.444992706525769       7.539192598725508
+4.517303879641023       5.364553142254951       6.926188273334633
+.4864574777535324
+
+The comparison between survey variability and procedure variability was
+difficult because it's hard to match up survey categories to the
+appropriate procedure it corresponds to. I ended up matching up 5 of the
+procedures examined in step 2 to survey categories and examined the standard
+deviation for these survey categories. 
+
+From the results, it looks like the only correlation between procedural
+variability and survey responses is responsiveness of hospital staff and
+waiting times in the emergency room, both to be seen and to be admitted. This
+does make sense because as mentioned before, wait times will vary greatly not
+only among hospitals but among different patients in the same hospital. If a
+patient has to wait longer to be admitted or to be seen, they might not be
+satisfied with the responsiveness the staff. However, if a patient was seen
+right away and admitted the condition was more severe, then the patient might
+be very satisfied with the responsiveness of the staff. 
+

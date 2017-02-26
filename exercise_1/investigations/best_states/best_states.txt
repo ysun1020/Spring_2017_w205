@@ -1,0 +1,17 @@
+Top 10 states with high quality care
+STATE	num_hospitals	avg_hospital_rank_score
+WI      22      329.22727272727275
+IA      10      398.5
+MN      18      435.27777777777777
+IN      26      459.7307692307692
+CO      13      465.7692307692308
+MI      24      472.3333333333333
+OH      43      473.0232558139535
+KY      10      480.6
+MO      11      484.90909090909093
+IL      26      492.7692307692308
+
+Coming up with the states was straight forward using the ranking table from the previous step. I took an average of the ranking score by state, and put a filter on number of hospital in a state to be greater or equal to 10. The result is taking the top ten states with the lowest average rank score and with more than 10 hospitals in the dataset. 
+
+I filtered on number of hospitals because I think high quality care in a state also means it would have to be easily accessible. If a state has one hospital that is ranked the best using the methodology in the previous step, but there is only one hospital in the entire state, patients would have a hard time accessing care from that hospital, thus making the experience less high quality. 
+
