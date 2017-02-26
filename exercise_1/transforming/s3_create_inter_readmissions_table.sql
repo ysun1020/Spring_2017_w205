@@ -11,10 +11,10 @@ CASE WHEN compared_to_national="No Different than the National Rate" THEN 0
 WHEN compared_to_national="Worse than the National Rate" THEN -1
 WHEN compared_to_national="Better than the National Rate" THEN 1
 ELSE 9999 END AS national_compare_score,
-denominator AS sample_size,
-CAST(score as decimal(1,0)) AS score,
-CAST(lower_estimate as decimal(1,0)) AS lower_estimate,
-CAST(higher_estimate as decimal(1,0)) as higher_estimate,
+CAST(denominator AS int) AS sample_size,
+CAST(score AS float) AS score,
+CAST(lower_estimate AS float) AS lower_estimate,
+CAST(higher_estimate AS float) as higher_estimate,
 measure_start_date,
 measure_end_date
 FROM readmissions;
