@@ -1,0 +1,135 @@
+DROP TABLE ED_2b;
+
+CREATE TABLE ED_2b AS
+SELECT *
+FROM T1 
+WHERE measure_id = "ED_2b";
+
+DROP TABLE OP_18b;
+
+CREATE TABLE OP_18b AS
+SELECT *
+FROM T1 
+WHERE measure_id = "OP_18b";
+
+DROP TABLE OP_20;
+
+CREATE TABLE OP_20 AS
+SELECT *
+FROM T1 
+WHERE measure_id = "OP_20";
+
+DROP TABLE OP_21;
+
+CREATE TABLE OP_21 AS
+SELECT *
+FROM T1 
+WHERE measure_id = "OP_21";
+
+DROP TABLE OP_5;
+
+CREATE TABLE OP_5 AS
+SELECT *
+FROM T1 
+WHERE measure_id = "OP_5";
+
+DROP TABLE ED_1b;
+
+CREATE TABLE ED_1b AS
+SELECT *
+FROM T1 
+WHERE measure_id = "ED_1b";
+
+DROP TABLE IMM_2;
+
+CREATE TABLE IMM_2 AS
+SELECT *
+FROM T2
+WHERE measure_id = "IMM_2";
+
+DROP TABLE OP_23;
+
+CREATE TABLE OP_23 AS
+SELECT *
+FROM T2
+WHERE measure_id = "OP_23";
+
+DROP TABLE OP_4;
+
+CREATE TABLE OP_4 AS
+SELECT *
+FROM T2
+WHERE measure_id = "OP_4";
+
+DROP TABLE OP_29;
+
+CREATE TABLE OP_29 AS
+SELECT *
+FROM T2
+WHERE measure_id = "OP_29";
+
+DROP TABLE VTE_5;
+
+CREATE TABLE VTE_5 AS
+SELECT *
+FROM T2
+WHERE measure_id = "VTE_5";
+
+DROP TABLE STK_4;
+
+CREATE TABLE STK_4 AS
+SELECT *
+FROM T2
+WHERE measure_id = "STK_4";
+
+DROP TABLE OP_30;
+
+CREATE TABLE OP_30 AS
+SELECT *
+FROM T2
+WHERE measure_id = "OP_30";
+
+DROP TABLE IMM_3_OP_27_FAC_ADHPCT;
+
+CREATE TABLE IMM_3_OP_27_FAC_ADHPCT AS
+SELECT *
+FROM T2
+WHERE measure_id = "IMM_3_OP_27_FAC_ADHPCT";
+
+DROP TABLE PC_01;
+
+CREATE TABLE PC_01 AS
+SELECT *
+FROM T3
+WHERE measure_id = "PC_01";
+
+DROP TABLE OP_22;
+
+CREATE TABLE OP_22 AS
+SELECT *
+FROM T3
+WHERE measure_id = "OP_22";
+
+DROP TABLE VTE_6;
+
+CREATE TABLE VTE_6 AS
+SELECT *
+FROM T3
+WHERE measure_id = "VTE_6";
+
+DROP TABLE valid_score;
+
+CREATE TABLE valid_score AS
+SELECT 
+p.provider_id, 
+p.num_valid_score,
+CASE WHEN p.num_valid_score >= 15 THEN "Y"
+ELSE "N" END AS valid_flag
+FROM(
+SELECT provider_id,
+       count(measure_id) as num_valid_score
+FROM inter_effective_care
+WHERE score <> 9999
+GROUP BY provider_id
+)p;
+
