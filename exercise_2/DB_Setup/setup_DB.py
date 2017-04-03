@@ -27,3 +27,4 @@ conn.commit()
 cur.close()
 conn.close()
 
+print "Setup complete, please proceed to next step"
