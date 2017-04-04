@@ -73,3 +73,28 @@ Note: Input for this must be 2 **integers**, separated by a **space**
 1. Login to Twitter 
 2. Visit https://apps.twitter.com/ and click on "Create New App". 
 
+![alt-text](https://github.com/ysun1020/Spring_2017_w205/blob/master/exercise_2/snapshots/12-screenshot-TwitterAppStart.png "Create New App")
+
+3. Fill in the application name, description, and website (ignore the Callback URL field). The name will now be listed in as one of your applications. 
+
+![alt-text](https://github.com/ysun1020/Spring_2017_w205/blob/master/exercise_2/snapshots/9-screenshot-CreateTwitterApp.png "Create an Application")
+
+4. Agree to the terms and agreements, and click "Create your Twitter Application"
+
+Once you have successfully created an application, it should take you to the application page. Here you must create access keys for subsequent operations by your application, using the following procedure:
+
+1. Click on the "Keys and Access Tokens" tab.
+2. Click on "Create my access token" near the bottom of the page.
+
+![alt-text](https://github.com/ysun1020/Spring_2017_w205/blob/master/exercise_2/snapshots/10-screenshot-TwitterTokenActivation.png "Access Token")
+
+Now you have four pieces of information (from the blacked out fields below):
+
+A consumer key that identifies your application.
+A consumer secret that acts as a password for your application.
+An access token that identifies your authorized access.
+An access token secret that acts as a password for that authorized access.
+
+![alt-text](
+
+
