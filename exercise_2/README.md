@@ -95,6 +95,8 @@ A consumer secret that acts as a password for your application.
 An access token that identifies your authorized access.
 An access token secret that acts as a password for that authorized access.
 
-![alt-text](
+![alt-text](https://github.com/ysun1020/Spring_2017_w205/blob/master/exercise_2/snapshots/11-screentshot-TwitterAPIKeys.png "API Key")
+
+At any point, you can revoke the access key, or regenerate any of these values. To completely disable the application, you must delete the application. This removes the consumer key, secret, and access tokens from Twitter's system, and any program using them will immediately stop working.
 
 
