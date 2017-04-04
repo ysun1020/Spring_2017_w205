@@ -16,7 +16,7 @@ $ su - w205
 ```
 $ git clone https://github.com/ysun1020/Spring_2017_w205.git
 ```
-2. Change directory to exercise_2/DB_Setup and run setup_DB in order to set up PostgresSQL database and tweetwordcount table
+2. Change directory to exercise_2/DB_Setup and run `setup_DB.py` in order to set up PostgresSQL database and tweetwordcount table
 ```
 $ python setup_DB.py
 ```
