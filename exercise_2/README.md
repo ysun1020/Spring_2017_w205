@@ -91,8 +91,11 @@ Once you have successfully created an application, it should take you to the app
 Now you have four pieces of information (from the blacked out fields below):
 
 A consumer key that identifies your application.
+
 A consumer secret that acts as a password for your application.
+
 An access token that identifies your authorized access.
+
 An access token secret that acts as a password for that authorized access.
 
 ![alt-text](https://github.com/ysun1020/Spring_2017_w205/blob/master/exercise_2/snapshots/11-screentshot-TwitterAPIKeys.png "API Key")
