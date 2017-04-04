@@ -12,7 +12,7 @@
 ```
 $ su - w205
 ```
-2. clone the repo as w205
+2. clone the repo
 ```
 $ git clone https://github.com/ysun1020/Spring_2017_w205.git
 ```
